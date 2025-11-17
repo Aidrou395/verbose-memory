@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventify Umeå – Hitta event i Umeå</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f6fa;
+            color: #1a1a1a;
+        }
+
+        header {
+            background-color: #4E7DF4;
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .search-container {
+            padding: 15px;
+            margin-top: -10px;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+            outline: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .events {
+            padding: 15px;
+        }
+
+        .event-card {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .event-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .event-date {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 6px 0;
+        }
+
+        .event-location {
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Eventify Umeå</header>
+
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Sök event…">
+    </div>
+
+    <div class="events" id="events-list">
+        <!-- Event cards genereras av JS -->
+    </div>
+
+    <div class="footer">Byggd av Eventify · Umeå 2025</div>
+
+    <script>
+        const events = [
+            {
+                title: "Gratis Standup-kväll",
+                date: "5 december 2025, 19:00",
+                location: "Kulturhuset – Köpmangatan 1",
+            },
+            {
+                title: "Klubbkväll @ R
