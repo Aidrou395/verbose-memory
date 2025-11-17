@@ -1,0 +1,85 @@
+# Verbose Memory — Evenemangssamling för Umeå
+
+Kort
+En mobilvänlig webbapp som samlar evenemang i Umeå så att studenter och andra enkelt hittar vad som händer i stan.
+
+Mål
+- Samla och visa relevanta event i Umeå på ett ställe.
+- Filtrering (genre, datum, plats), karta och enkelt gränssnitt för att lägga till/rapportera event.
+- Snabb MVP-utveckling med möjlighet att skala till automatiska importers senare.
+
+MVP-funktioner
+- Lista över kommande events med titel, datum/tid, plats, kategori, kort beskrivning och (valfritt) bild.
+- Sök och filter (datum, kategori, gratis/avgift).
+- Event-detaljsida med full information och länk till arrangör.
+- Karta med event-pins.
+- Enkel admin-sida för att lägga till/redigera events.
+- Responsiv design för mobil och desktop.
+
+Teknisk förslag (MVP)
+- Frontend: Next.js (React) + TailwindCSS (för SEO/SSG och snabb utveckling).
+- Backend/Data: Firebase Firestore + Authentication för snabb MVP. Alternativt Node/Express + PostgreSQL.
+- Kartor: Leaflet + OpenStreetMap (öppet och gratis).
+- Hosting: Vercel (frontend) och Firebase Hosting/Functions eller Heroku (backend).
+- Import: Börja manuellt (admin), senare RSS/ICS, kommunens API eller externa integrationer.
+
+Kom igång (snabbguide)
+1. Klona repo
+   git clone https://github.com/Aidrou395/verbose-memory.git
+   cd verbose-memory
+2. Installera beroenden (exempel med npm)
+   npm install
+3. Konfigurera miljövariabler (exempel)
+   - NEXT_PUBLIC_FIREBASE_API_KEY=...
+   - NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=...
+   - NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
+   - FIREBASE_PRIVATE_KEY=... (endast för serverfunktioner)
+4. Kör dev-server
+   npm run dev
+5. Produktion
+   - Bygg: npm run build
+   - Deploy: Vercel eller annan valfri hosting
+
+Datamodell — exempel (Firestore)
+```json
+{
+  "title": "Gratis standup på Kulturhuset",
+  "description": "Standupkväll för studenter. Åldersgräns 18+.",
+  "start": "2025-12-05T19:00:00Z",
+  "end": "2025-12-05T21:00:00Z",
+  "location": {
+    "name": "Kulturhuset",
+    "address": "Köpmannagatan 1, Umeå",
+    "lat": 63.8258,
+    "lng": 20.2630
+  },
+  "category": "Humor",
+  "price": "Gratis",
+  "imageUrl": "https://example.com/image.jpg",
+  "source": "manual",
+  "createdBy": "organizer@example.com",
+  "published": true
+}
+```
+
+Funktioner att prioritera (roadmap)
+- Autentisering för arrangörer.
+- CSV-import för bulk uppladdning.
+- RSS/ICS-importers för kommun/aktörer.
+- Favoriter och e-postnotiser.
+- Moderation & rapporteringsflöde.
+
+Bidra
+- Använd GitHub Issues för buggar och förslag.
+- Skapa pull requests mot `main` (eller en feature-branch) med beskrivning.
+- Följ kodstil och lägg till tester för nya funktioner.
+
+Licens och kontakt
+- Lägg till önskad licence (t.ex. MIT) i LICENSE-filen.
+- Projektägare: Aidrou395
+- Kontakt: öppna issue eller skriv i repo:t
+
+Vad jag kan göra härnäst
+- Skapa en lista med issues (setup, datamodell, UI-lista, event-sida, admin-auth).
+- Skapa grundläggande Next.js-scaffold och första komponenterna.
+Säg vilken av dessa du vill att jag gör nu så sätter jag igång direkt.
