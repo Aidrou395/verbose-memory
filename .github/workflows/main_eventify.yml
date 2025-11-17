@@ -34,13 +34,12 @@ jobs:
     - name: Login to Azure
       uses: azure/login@v2
       with:
-        client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0DF629B196F24F81A0D60712F3895683 }}
-        tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_9BAB6E52F35B43A3B8FD807D2F4EE248 }}
-        subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6E732E1DE4194220956E44B810E70526 }}
+        client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_3A5D1DBCE9A0468981D89F945AAAADAB2 }}
+        tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_25C8860C854C41F281AA091F0CB1C00D }}
+        subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F29CA7EAD4FB403D89A92388ED79318C }}
 
     - name: Deploy static site
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'Eventify'
         package: .
-
